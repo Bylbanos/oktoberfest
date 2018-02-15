@@ -7,6 +7,11 @@ class BeersController < ApplicationController
     @beers = Beer.all
   end
 
+  def contact_us
+  end
+
+  def gallery
+  end
   # GET /beers/1
   # GET /beers/1.json
   def show
