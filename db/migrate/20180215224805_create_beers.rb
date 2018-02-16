@@ -6,7 +6,7 @@ class CreateBeers < ActiveRecord::Migration[5.1]
       t.decimal :price
       t.datetime :opened
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
