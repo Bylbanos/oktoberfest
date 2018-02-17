@@ -1,5 +1,7 @@
 {
   "name": "oktoberfest",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bulma": "^0.6.2"
+  }
 }
