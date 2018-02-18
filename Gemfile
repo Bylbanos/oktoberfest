@@ -15,6 +15,9 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+# Authentication / Authorization
+gem 'devise'
+
 # JavaScript
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.2'
