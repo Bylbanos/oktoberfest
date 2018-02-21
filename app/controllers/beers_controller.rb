@@ -1,6 +1,8 @@
 class BeersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_beer, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:beers, :index]
+
+  # before_action :authenticate_user!
+  before_action :set_beer, only: %i[show edit update destroy]
 
   # GET /beers
   # GET /beers.json
@@ -8,15 +10,13 @@ class BeersController < ApplicationController
     @beers = Beer.all
   end
 
-  def contact_us
-  end
+  def contact_us; end
 
-  def gallery
-  end
+  def gallery; end
+
   # GET /beers/1
   # GET /beers/1.json
-  def show
-  end
+  def show; end
 
   # GET /beers/new
   def new
@@ -24,8 +24,7 @@ class BeersController < ApplicationController
   end
 
   # GET /beers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /beers
   # POST /beers.json
@@ -68,13 +67,14 @@ class BeersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_beer
-      @beer = Beer.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def beer_params
-      params.require(:beer).permit(:title, :description, :price, :opened)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_beer
+    @beer = Beer.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def beer_params
+    params.require(:beer).permit(:title, :description, :price, :opened)
+  end
 end
