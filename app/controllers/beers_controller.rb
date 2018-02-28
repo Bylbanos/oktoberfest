@@ -1,12 +1,12 @@
 class BeersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:beer_table, :gallery, :contact_us]
+  Search = Struct.new(:query)
 
-  # before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:beer_table, :gallery, :contact_us, :search]
   before_action :set_beer, only: %i[show edit update destroy]
 
 
   def index
-    @beers = Beer.all
+
   end
 
   def contact_us; end
@@ -15,7 +15,11 @@ class BeersController < ApplicationController
   end
 
   def beer_table
-    @beers = Beer.all
+
+  end
+
+  def search
+    render json: all_beers
   end
 
   def show; end
@@ -61,6 +65,24 @@ class BeersController < ApplicationController
   end
 
   private
+
+  def all_beers
+    beers = Beer.order(opened: :desc)
+
+    search = Search.new(params[:query])
+    add_filters(beers, search)
+  end
+
+  def add_filters(beers, search)
+    beers = add_query_filter(beers, search.query)
+    beers
+  end
+
+  def add_query_filter(beers, query)
+    return beers if query.empty?
+
+    beers.where("title ILIKE :q OR description ILIKE :q", q: "%#{query}%")
+  end
 
   def set_beer
     @beer = Beer.find(params[:id])

@@ -27,7 +27,7 @@
 </div>
 
 
-<%= react_component( 'Index', beers: @beers) %>
+<%= react_component('Index') %>
 
 <% if current_user &&  current_user.admin?%>
   <%= link_to 'Edit beers', beers_path %>
