@@ -1,5 +1,4 @@
 <head>
-  <%= javascript_pack_tag 'hello_react' %>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello Bulma!</title>
@@ -7,6 +6,8 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
 
 </head>
+
+
 
 
 <div class="section">
@@ -24,4 +25,7 @@
     </div>
   </div>
 </div>
-<h1>Gallery here bliat'</h1>
+
+<% if current_user &&  current_user.admin?%>
+  <%= link_to 'Edit beers', beers_path %>
+<% end %>

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'beers#contact_us'
   get 'gallery', to: 'beers#gallery'
-  root 'beers#index'
+  get 'beer_table', to: 'beers#beer_table'
+  root 'beers#beer_table'
 end

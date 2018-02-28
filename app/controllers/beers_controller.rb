@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:beers, :index]
+  skip_before_action :authenticate_user!, only: [:beer_table, :gallery, :contact_us]
 
   # before_action :authenticate_user!
   before_action :set_beer, only: %i[show edit update destroy]
@@ -7,12 +7,16 @@ class BeersController < ApplicationController
 
   def index
     @beers = Beer.all
-
   end
 
   def contact_us; end
 
-  def gallery; end
+  def gallery;
+  end
+
+  def beer_table
+    @beers = Beer.all
+  end
 
   def show; end
 
