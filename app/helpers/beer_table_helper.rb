@@ -1,0 +1,2 @@
+module BeerTableHelper
+end

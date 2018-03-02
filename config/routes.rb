@@ -6,15 +6,14 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :static do
-    resources :contents, only: %i[] do
+    resources :beer_table do
       get :search, on: :collection
     end
-  end
+
 
   get 'contact', to: 'static/contents#contact_us'
   get 'gallery', to: 'static/contents#gallery'
-  get 'beer_table', to: 'static/contents#beer_table'
+  get 'beer_table', to: 'beer_table#beer_table'
 
-  root 'static/contents#beer_table'
+  root 'beer_table#beer_table'
 end
