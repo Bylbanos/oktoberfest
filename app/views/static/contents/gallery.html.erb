@@ -27,5 +27,5 @@
 </div>
 
 <% if current_user &&  current_user.admin?%>
-  <%= link_to 'Edit beers', beers_path %>
+  <%= link_to 'Edit beers', admin_beers_path %>
 <% end %>

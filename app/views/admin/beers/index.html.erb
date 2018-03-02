@@ -63,9 +63,9 @@
       <td><%= beer.opened %></td>
 
       <% if current_user &&  current_user.admin?%>
-        <td><%= link_to 'Show', beer %></td>
-        <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
-        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_beer_path(beer) %></td>
+        <td><%= link_to 'Edit', edit_admin_beer_path(beer) %></td>
+        <td><%= link_to 'Destroy', admin_beer_path(beer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
 
     </tr>
@@ -75,7 +75,7 @@
 
 
 
-<%= link_to 'New Beer', new_beer_path %>
+<%= link_to 'New Beer', new_admin_beer_path %>
 
 
 <section class="hero is-light">

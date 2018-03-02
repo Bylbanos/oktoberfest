@@ -14,7 +14,7 @@ export default class Index extends React.Component {
         }
     }
     loadBeers = (query = '') => {
-        fetch(`/beers/search?query=${query}`, { credentials: 'same-origin' })
+        fetch(`static/contents/search?query=${query}`, { credentials: 'same-origin' })
             .then(response => response.json())
             .then(beers => this.setState({ beers }));
 

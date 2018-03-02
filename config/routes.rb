@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :beers do
-    get :search, on: :collection
+
+  namespace :admin do
+    resources :beers do
+    end
   end
 
-  get 'contact', to: 'beers#contact_us'
-  get 'gallery', to: 'beers#gallery'
-  get 'beer_table', to: 'beers#beer_table'
-  root 'beers#beer_table'
+  namespace :static do
+    resources :contents, only: %i[] do
+      get :search, on: :collection
+    end
+  end
+
+  get 'contact', to: 'static/contents#contact_us'
+  get 'gallery', to: 'static/contents#gallery'
+  get 'beer_table', to: 'static/contents#beer_table'
+
+  root 'static/contents#beer_table'
+
 end
