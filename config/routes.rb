@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   get 'beer_table', to: 'static/contents#beer_table'
 
   root 'static/contents#beer_table'
-
 end

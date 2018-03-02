@@ -3,7 +3,7 @@ module Static
     Search = Struct.new(:query)
     def contact_us; end
 
-    def gallery;  end
+    def gallery; end
 
     def beer_table; end
 
@@ -28,8 +28,7 @@ module Static
     def add_query_filter(beers, query)
       return beers if query.empty?
 
-      beers.where("title ILIKE :q OR description ILIKE :q", q: "%#{query}%")
+      beers.where('title ILIKE :q OR description ILIKE :q', q: "%#{query}%")
     end
-
   end
 end

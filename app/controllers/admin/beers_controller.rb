@@ -1,9 +1,7 @@
 module Admin
   class BeersController < ApplicationController
-
     before_action :authenticate_user!
     before_action :set_beer, only: %i[show edit update destroy]
-
 
     def index
       @beers = Beer.all.order(opened: :desc)

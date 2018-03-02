@@ -1,2 +1,0 @@
-module Static::ContentsHelper
-end
