@@ -6,7 +6,7 @@ class BeersController < ApplicationController
 
 
   def index
-
+    @beers = Beer.all.order(opened: :desc)
   end
 
   def contact_us; end
