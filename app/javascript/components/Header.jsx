@@ -4,10 +4,10 @@ const Header = () => {
     return (
         <thead>
         <tr>
-            <th className="has-text-left">Beers name</th>
-            <th className="has-text-centered">Description</th>
+            <th width ="20%" className="has-text-left">Beers name</th>
+            <th className="has-text-left">Description</th>
             <th className="has-text-centered">Price</th>
-            <th className="has-text-centered">Date opened</th>
+            <th width ="15%" className="has-text-centered">Date opened</th>
         </tr>
         </thead>
     )

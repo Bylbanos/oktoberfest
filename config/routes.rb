@@ -6,10 +6,9 @@ Rails.application.routes.draw do
     end
   end
 
-    resources :beer_table do
-      get :search, on: :collection
-    end
-
+  resources :beer_table, only: %i[] do
+    get :search, on: :collection
+  end
 
   get 'contact', to: 'static/contents#contact_us'
   get 'gallery', to: 'static/contents#gallery'

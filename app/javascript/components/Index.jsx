@@ -2,12 +2,9 @@ import React from 'react';
 import Beers from './Beers';
 import SearchBox from './SearchBox';
 
-
-
 export default class Index extends React.Component {
     constructor() {
         super();
-
         this.state = {
             query: '',
             beers: []
@@ -20,9 +17,8 @@ export default class Index extends React.Component {
 
     };
     componentWillMount() {
-        this.loadBeers(this.state);
+        this.loadBeers(this.state.beers);
     };
-
     render() {
         const { beers } = this.state;
             return (
