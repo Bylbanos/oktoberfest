@@ -16,7 +16,7 @@ export default class SearchBox extends React.Component {
         return (
             <div className="field">
                 <p className="control has-icons-right">
-                    <input className="input" type="text" placeholder="Type in car maker" onKeyUp={this.handleKeyUp} autoFocus="autofocus" />
+                    <input className="input" type="text" placeholder="Type in beer name or style" onKeyUp={this.handleKeyUp} autoFocus="autofocus" />
                     <span className="icon is-small is-right">
               <i className="fa fa-search" aria-hidden="true"></i>
             </span>

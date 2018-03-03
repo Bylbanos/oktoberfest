@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Oktoberfest</title>
+    <title>Oktoberfest Beer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
-
   </head>
 
   <body>
@@ -17,14 +20,10 @@
       <div class="notification is-danger is-marginless"><button class="delete"><%= alert %></button></div>
     <% end %>
 
-    <div class="navbar-end">
-      <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-item'  %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: 'navbar-item'  %>
-      <% end %>
-    </div>
+    <%= render partial: 'layouts/navbar' %>
 
     <%= yield %>
+
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

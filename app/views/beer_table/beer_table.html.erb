@@ -1,33 +1,11 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
+<body>
+  <div class="section">
+    <%= react_component('Index') %>
+    <%= render partial: 'layouts/edit_beers' %>
+  </div>`
+</body>
 
-
-
-<div class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-offset-3 is-2 has-text-centered">
-        <%= link_to "Beer", root_path, class: "button is-active is-dark is-medium is-fullwidth is-outlined" %>
-      </div>
-      <div class="column is-2 has-text-centered">
-        <%= link_to "Gallery", gallery_path, class: "button is-dark is-medium is-fullwidth is-outlined" %>
-      </div>
-      <div class="column is-2 has-text-centered">
-        <%= link_to "Contact Us", contact_path, class: "button is-dark is-medium is-fullwidth is-outlined" %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <%= react_component('Index') %>
-</div>
-
-<% if current_user &&  current_user.admin?%>
-  <%= link_to 'Edit beers', admin_beers_path %>
-<% end %>

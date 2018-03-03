@@ -1,0 +1,11 @@
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-offset-5 is-2 has-text-centered">
+        <% if current_user &&  current_user.admin?%>
+          <%= link_to 'Edit beers', admin_beers_path, class: 'button is-dark is-medium is-fullwidth is-outlined' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
