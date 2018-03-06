@@ -43,8 +43,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug'
   gem 'capybara', '~> 2.13'
+  gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', require: false
   gem 'selenium-webdriver'
 end
