@@ -5,6 +5,8 @@ application up and running.
 
 Things you may want to cover:
 
+first changq
+
 * Ruby version
 
 * System dependencies
