@@ -5,6 +5,8 @@ application up and running.
 
 Things you may want to cover:
 
+4th change
+
 * Ruby version
 
 * System dependencies
